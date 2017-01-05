@@ -36,4 +36,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    /*public function index()
+    {
+        return 'this is a test from the login controller';
+    }*/
+
+    public function index(Request $request)
+    {
+        return request->get('name', 'No name provided');
+    }
 }
